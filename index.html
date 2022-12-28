@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<title>闯三关</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no" />
+		<script charset="utf-8" src="js/jquery.min.js"></script>
+		<!--<script src="js/rem.js"></script>-->
+		<link rel="stylesheet" type="text/css" href="css/index.css"/>
+		<style>
+			
+			.firststage{
+				width: 100%;
+				height: 100%;
+				background: url(img/bg1.png) 0 0/100% 100% no-repeat;
+				overflow: hidden;
+				position: relative;
+			}
+			.firststage div{
+				position: absolute;
+				left: 0;
+				top: 0;
+				width: 100%;
+				height: 100%;
+			}
+			canvas{
+				width: 100%;
+				display: block;
+				/*height: 100%;*/
+				margin: 0;
+				padding: 0;
+				-moz-user-select: none;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="firststage" id="firststage">
+			<!--<div></div>-->
+			<canvas width="1000" height="1778" id="page" >您的浏览器不支持 HTML5 canvas 标签</canvas>
+		</div>
+		<script src="js/index2.js"></script>
+		<script>
+			window.onload = function() {
+				var width1,height1,rem1;
+				width1 = document.body.scrollWidth || document.documentElement.scrollWidth;
+			    height1 = document.body.scrollHeight || document.documentElement.scrollHeight;
+			   	rem1 = width1 / 10 * (1000 / width1);    
+			   	console.log(rem1 * 5)
+				var obj = {
+					stage: 3,//第几关
+					restknife: 8,//总共有几把刀
+					letguo: true,//让不让过，用于第三关
+					fireAfter: function () {//发射回调，用于发射后下面排列的刀的减少事件
+//						console.log('刀发射了，减少了')
+					},
+					failAfter: function() {//失败回调
+						console.log('失败')
+					},
+					successAfter: function() {//成功回调
+						console.log('成功')
+					},
+					prename: '.',
+					rollPy: rem1 * 5,
+					knifePy: rem1 * 8.5,
+				}
+				Csg.init(obj);
+				// Csg.limitfire= 0
+			}
+			
+		</script>
+	</body>
+
+</html>

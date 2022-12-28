@@ -1,0 +1,44 @@
+*{
+	padding: 0;
+	margin: 0;
+	text-decoration: none;
+	box-sizing: border-box;
+	font-family: "微软雅黑";
+	-webkit-tap-highlight-color: transparent;
+	list-style: none;
+}
+a{
+	color: #fff;
+}
+input {
+ 	-webkit-appearance:none; 
+ 	/*去除input默认样式*/
+ 	
+ }
+@keyframes mask1{
+	from{transform: scale(0.1);}
+	to{transform: scale(1);}
+}
+@-webkit-keyframes mask1{
+	from{-webkit-transform: scale(0.1);}
+	to{-webkit-transform: scale(1);}
+}
+@-moz-keyframes mask1{
+	from{transform: scale(0.1);}
+	to{transform: scale(1);}
+}
+@-ms-keyframes mask1{
+	from{transform: scale(0.1);}
+	to{transform: scale(1);}
+}
+html{
+	height: 100%;
+	width: 100%;
+	color: #fff;
+}
+body{
+	height: 100%;
+	width: 100%;
+	font-size: 13px;
+	/*position: fixed;*/
+}
